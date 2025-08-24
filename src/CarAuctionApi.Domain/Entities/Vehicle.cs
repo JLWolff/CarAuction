@@ -11,6 +11,21 @@ namespace CarAuctionApi.Domain.Entities
 
         protected Vehicle(string id, string manufacturer, string model, int year, decimal startingBid)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentException("Id cannot be null or empty.", nameof(id));
+            }
+
+            if (string.IsNullOrEmpty(manufacturer))
+            {
+                throw new ArgumentException("Manufacturer cannot be null or empty.", nameof(manufacturer));
+            }
+
+            if (string.IsNullOrEmpty(model))
+            {
+                throw new ArgumentException("Model cannot be null or empty.", nameof(model));
+            }
+            
             Id = id ?? throw new ArgumentNullException(nameof(id));
             Manufacturer = manufacturer ?? throw new ArgumentNullException(nameof(manufacturer));
             Model = model ?? throw new ArgumentNullException(nameof(model));

@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+  server:
+    build:
+      context: ./api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://0.0.0.0:5001
+    ports:
+      - "5001:5001"

@@ -10,4 +10,8 @@
     <ProjectReference Include="..\CarAuctionApi.Domain\CarAuctionApi.Domain.csproj" />
   </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\CarAuctionApi.Infrastructure\CarAuctionApi.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>
